@@ -372,7 +372,7 @@ const HomeLeftComponent = () => {
       if (axios.isCancel(error)) {
         console.log("Request canceled", error.message);
       } else if (error.response) {
-        if (error.response.status === 404) {
+        if (error.response.status === 404 || error.response.status === 400) {
           notify();
         } else {
           // notifyErrorSupport();
@@ -416,7 +416,11 @@ const HomeLeftComponent = () => {
               Year
             </label>
             <select
-              disabled={selectedAnalysis !== "gen-installation" ? true : false}
+              disabled={
+                selectedAnalysis === "gen-analysis-project-overall-report" ||
+                selectedAnalysis === "gen-analysis-shutter-overall-report" ||
+                selectedAnalysis === "gen-analysis-user-report"
+              }
               name="selectedYeaer"
               value={selectedYear}
               onChange={(event) => setSelectedYear(event.target.value)}
