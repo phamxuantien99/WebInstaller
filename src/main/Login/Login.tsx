@@ -45,6 +45,9 @@ const Login = () => {
           case 401:
             alert("Unauthorized");
             break;
+             case 403:
+            alert("Username or password is incorrect");
+            break;
           default:
             alert("Something went wrong, please try again.");
         }
