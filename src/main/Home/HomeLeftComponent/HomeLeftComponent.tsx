@@ -280,11 +280,13 @@ const HomeLeftComponent = () => {
   const notify = () =>
     toast.error("No products found !, please select again.", {
       position: "top-left",
+      className: "min-w-[400px]",
     });
 
   const notifyErrorSupport = () => {
     toast.error("Please contact support !", {
       position: "top-left",
+      className: "min-w-[400px]",
     });
   };
 
