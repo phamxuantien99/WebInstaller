@@ -37,7 +37,6 @@ const Login = () => {
         localStorage.setItem("username", res.data.user_info.user_name);
         setIsLoggedIn(true);
         navigate("/home");
-        console.log("success");
       })
       .catch((e) => {
         setIsLoggedIn(false);
